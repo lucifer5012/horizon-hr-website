@@ -35,7 +35,7 @@
             cvStatusMessage.style.color = 'gray';
 
             try {
-                const response = await fetch('http://localhost:3001/submit-resume', {
+                const response = await fetch('https://horizon-hr-backend.onrender.com/submit-resume', {
                     method: 'POST',
                     body: formData,
                 });

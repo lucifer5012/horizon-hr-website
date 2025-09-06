@@ -33,10 +33,9 @@ app.post('/submit-contact', (req, res) => {
     const senderName = `${firstName} ${lastName}`;
 
     const mailOptions = {
-        // IMPORTANT CHANGE: 'from' ko is naye format mein likha gaya hai
         from: `"${senderName}" <${process.env.EMAIL_USER}>`,
-        to: 'lucyfer5012@gmail.com', // Yahan apna receiving email daalein
-        subject: `New Contact Message from ${senderName}`, // Subject mein bhi naam daal diya
+        to: 'lucyfer5012@gmail.com', // Bilkul Sahi
+        subject: `New Contact Message from ${senderName}`,
         replyTo: email, // Jab aap reply karenge, toh email seedhe customer ko jaayega
         html: `
             <h2>New Contact Message</h2>
@@ -59,8 +58,6 @@ app.post('/submit-contact', (req, res) => {
     });
 });
 
-// Baaki ka code (submit-resume route aur app.listen) same rahega
-// ...
 
 // 2. Submit Resume Form ke liye Route
 app.post('/submit-resume', upload.single('resume'), (req, res) => {
@@ -73,7 +70,7 @@ app.post('/submit-resume', upload.single('resume'), (req, res) => {
 
     const mailOptions = {
         from: `"${fullName}" <${process.env.EMAIL_USER}>`,
-        to: 'lucyfer5012@gmail.com', // Yahan bhi apna receiving email daalein
+        to: 'lucyfer5012@gmail.com', // BADLAAV YAHAN: Email update kar diya gaya hai
         subject: `New Resume Submission from ${fullName}`,
         replyTo: email,
         html: `
@@ -105,12 +102,11 @@ app.post('/submit-resume', upload.single('resume'), (req, res) => {
 
 // 3. Teesre Form (General Inquiry) ke liye Route
 app.post('/submit-inquiry', (req, res) => {
-    // Form se 'name', 'mobile', 'email', 'message' nikal rahe hain
     const { name, mobile, email, message } = req.body;
 
     const mailOptions = {
         from: `"${name}" <${process.env.EMAIL_USER}>`,
-        to: 'lucyfer5012@gmail.com', // Yahan apna receiving email daalein
+        to: 'lucyfer5012@gmail.com', // BADLAAV YAHAN: Email update kar diya gaya hai
         subject: `New General Inquiry from ${name}`,
         replyTo: email,
         html: `

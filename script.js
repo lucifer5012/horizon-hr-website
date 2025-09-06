@@ -402,7 +402,7 @@
 
         try {
             // Data ko aapke local backend server par bhejega
-            const response = await fetch('http://localhost:3001/submit-contact', {
+            const response = await fetch('https://horizon-hr-backend.onrender.com/submit-contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

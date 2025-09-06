@@ -13,7 +13,7 @@
 
         try {
             // Yeh URL aapke local backend server ke naye /submit-inquiry route ko point kar raha hai
-            const response = await fetch('http://localhost:3001/submit-inquiry', {
+            const response = await fetch('https://horizon-hr-backend.onrender.com/submit-inquiry', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
