@@ -1,0 +1,296 @@
+    /* CSS STYLES - ALL IN ONE PLACE */
+
+        /* -------------------------- */
+        /* ----- 1. SETUP & VARIABLES ----- */
+        /* -------------------------- */
+        :root {
+            --primary-orange: #FA783B;
+            --dark-orange: #e66a2e;
+            --dark-bg: #1c1c1c; /* A very dark grey, softer than black */
+            --text-dark: #222;
+            --text-light: #f5f5f5;
+            --text-secondary: #666;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+             --primary-orange: #FA783B;
+            
+            --text-light-gray: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* -------------------------- */
+        /* ----- 2. CONTACT HERO (Image + Form) ----- */
+        /* -------------------------- */
+        .contact-hero-section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .contact-hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .hero-image {
+            flex-basis: 55%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-form {
+            flex-basis: 55%;
+        }
+        
+        .hero-form h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 3px rgba(250, 120, 59, 0.2);
+        }
+
+        textarea.form-input {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: auto;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            background-color: var(--primary-orange);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(250, 120, 59, 0.3);
+        }
+        
+        /* -------------------------- */
+        /* ----- 3. INFO BAR SECTION ----- */
+        /* -------------------------- */
+        .info-bar-section {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 20px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .info-box {
+            padding: 20px;
+        }
+        
+        .info-box i {
+            font-size: 28px;
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+        }
+        
+        .info-box h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 15px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* -------------------------- */
+        /* ----- 4. MAP SECTION ----- */
+        /* -------------------------- */
+        .map-section {
+            padding: 30px 0;
+        }
+        
+        .map-section .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .map-section h2 {
+             font-size: 36px;
+             font-weight: 700;
+        }
+        
+        .map-container {
+          
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            display: block;
+        }
+
+        /* -------------------------- */
+        /* ----- 5. RESPONSIVE DESIGN ----- */
+        /* -------------------------- */
+        @media (max-width: 992px) {
+            .contact-hero-grid {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .hero-image { display: none; } /* Hide image on smaller screens to focus on form */
+            .hero-form { flex-basis: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+          /* -------------------------- */
+        /* ----- 2. PAGE HEADER SECTION ----- */
+        /* -------------------------- */
+        .page-header {
+            /* NOTE: Apni pasand ki background image ka URL yahan daalein */
+            background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            position: relative;
+            text-align: center;
+            color:black;
+        }
+
+        /* Dark Overlay for better text readability */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6); /* Adjust darkness here (0.6 = 60% black) */
+            z-index: 1;
+        }
+
+        /* Container for content to sit above the overlay */
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Breadcrumb Style ("Home / Contact Us") */
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color:black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-orange);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: var(--text-light-gray);
+        }
+
+        /* Main Title Style */
+        .header-title {
+            font-size: 52px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* Orange Accent Line */
+        .accent-line {
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-orange);
+            margin: 25px auto 0;
+            border-radius: 2px;
+        }
+
+        /* -------------------------- */
+        /* ----- 3. RESPONSIVE DESIGN ----- */
+        /* -------------------------- */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 90px 0;
+            }
+
+            .header-title {
+                font-size: 38px;
+            }
+            
+            .breadcrumb {
+                font-size: 15px;
+            }
+        }

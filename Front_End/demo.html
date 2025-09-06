@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Horizon HR Consultancy</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Global Styles & Resets --- */
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #6b7280;
+            --border-color: #f0f0f0;
+            --accent-color: #F36927; /* Aapki Orange Theme */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- Form Card Styles --- */
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--card-bg);
+            padding: 2.5rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #EAEAEA;
+            background-color: #FAFAFA;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(243, 105, 39, 0.1);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #333333;
+        }
+        #status-message {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 500;
+            min-height: 24px;
+        }
+        #status-message.success { color: green; }
+        #status-message.error { color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form id="contact-us-form">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+             <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            <p id="status-message"></p>
+        </form>
+    </div>
+    
+    <script>
+        const contactForm = document.getElementById('contact-us-form');
+        const statusMessage = document.getElementById('status-message');
+
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            statusMessage.textContent = 'Sending...';
+            statusMessage.className = '';
+
+            try {
+                // Yeh URL aapke local backend server ko point kar raha hai
+                const response = await fetch('http://localhost:3001/submit-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    statusMessage.textContent = 'Thank you! Your message has been sent.';
+                    statusMessage.className = 'success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Server responded with an error.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                statusMessage.className = 'error';
+            }
+        });
+    </script>
+
+</body>
+</html>
+

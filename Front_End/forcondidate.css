@@ -1,0 +1,512 @@
+      /* ================== PAGE HEADER SECTION ================== */
+        #page-header-section {
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-header-bg-parallax {
+            position: absolute;
+            top: -20%; /* Extra height for parallax */
+            left: 0;
+            width: 100%;
+            height: 140%; /* Extra height for parallax */
+            /* New Image for Candidates Page */
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        #page-header-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6); /* Dark overlay */
+            z-index: 2;
+        }
+        
+        .page-header-wrapper {
+            max-width: 1140px;
+            margin: auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .breadcrumb-nav {
+            margin-bottom: 1rem;
+        }
+        .breadcrumb-nav a, .breadcrumb-nav span {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .breadcrumb-nav a:hover {
+            color: #F36927; /* Orange */
+        }
+        .breadcrumb-nav .separator {
+            margin: 0 0.5rem;
+        }
+        .breadcrumb-nav .current-page {
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .page-header-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000000;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.75rem;
+        }
+
+        /* Orange Underline */
+        .page-header-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #F36927; /* Orange */
+            border-radius: 2px;
+        }
+        
+        /* ================== RESPONSIVE DESIGN ================== */
+        @media screen and (max-width: 768px) {
+            #page-header-section {
+                padding: 6rem 0;
+            }
+            .page-header-title {
+                font-size: 2.5rem;
+            }
+        }
+
+
+
+           /* ================== HOW WE HELP SECTION (REDESIGNED) ================== */
+        #how-we-help-section {
+            padding: 6rem 0;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Floating Shapes */
+        .help-floating-shapes .shape {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(243, 105, 39, 0.05); /* Very Light Orange */
+            z-index: 0;
+            animation: help-float 20s infinite linear;
+        }
+        .shape-c-1 { width: 200px; height: 200px; top: 10%; left: 5%; animation-duration: 25s; }
+        .shape-c-2 { width: 100px; height: 100px; bottom: 15%; right: 10%; animation-duration: 20s; }
+
+        @keyframes help-float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(90deg); }
+            100% { transform: translateY(0) rotate(180deg); }
+        }
+
+        .how-we-help-wrapper {
+            max-width: 1300px;
+            margin: auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .how-we-help-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .help-intro-column .subtitle {
+            color: #F36927;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .help-intro-column .title {
+            font-size: 2.5rem;
+            color: #333333;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        .help-intro-column .description {
+            color: #555555;
+            line-height: 1.7;
+        }
+
+        .benefits-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+            background-color: #fef1e9;
+        }
+
+        .benefit-item .benefit-icon {
+            flex-shrink: 0;
+            font-size: 1.8rem;
+            color: #F36927;
+            background-color: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-item .benefit-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-item .benefit-content p {
+            color: #555555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* ================== RESPONSIVE DESIGN ================== */
+        @media screen and (max-width: 992px) {
+            .how-we-help-grid {
+                grid-template-columns: 1fr;
+            }
+            .help-intro-column {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            #page-header-section { padding: 6rem 0; }
+            .page-header-title { font-size: 2.5rem; }
+            .help-intro-column .title { font-size: 2rem; }
+        }
+
+
+           /* ================== SUBMIT CV SECTION (FINAL REDESIGN) ================== */
+        #submit-cv-section-v4 {
+            padding: 6rem 0;
+            background-color: #f8f9fa; /* Light Gray BG */
+            position: relative;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cv-wrapper-v4 {
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cv-main-card {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* Left image, Right form */
+        }
+        
+        .cv-image-column-v4 {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cv-image-overlay {
+            padding: 3rem;
+            color: #FFFFFF;
+            background: linear-gradient(to bottom, rgba(243, 105, 39, 0.9), rgba(243, 105, 39, 0.8));
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cv-image-overlay .subtitle {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .cv-image-overlay .title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        .cv-image-overlay .description {
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .cv-form-column-v4 {
+            padding: 3rem;
+        }
+
+        .cv-form-v4 .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .cv-form-v4 label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555555;
+        }
+        .cv-form-v4 input[type="text"],
+        .cv-form-v4 input[type="email"],
+        .cv-form-v4 input[type="tel"] {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+        .cv-form-v4 input:focus {
+            outline: none;
+            border-color: #F36927;
+            box-shadow: 0 0 0 3px rgba(243, 105, 39, 0.1);
+            background-color: #FFFFFF;
+        }
+        
+        .file-upload-wrapper-v4 {
+            position: relative;
+        }
+        .file-upload-label-v4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem;
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .file-upload-label-v4:hover {
+            border-color: #F36927;
+            background-color: #fef1e9;
+        }
+        .file-upload-label-v4 i {
+            margin-right: 0.75rem;
+            color: #F36927;
+        }
+        .file-upload-input-v4 {
+            display: none;
+        }
+        #file-name-display-v4 {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #555555;
+            text-align: center;
+        }
+
+        .cv-submit-btn-v4 {
+            width: 100%;
+            padding: 0.9rem 2rem;
+            border: none;
+            background-color: #F36927;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cv-submit-btn-v4:hover {
+            background-color: #333333;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 105, 39, 0.3);
+        }
+
+        /* ================== RESPONSIVE DESIGN ================== */
+        @media screen and (max-width: 992px) {
+            .cv-main-card {
+                grid-template-columns: 1fr;
+            }
+            .cv-image-overlay {
+                text-align: center;
+            }
+        }
+
+
+        
+        /* ================== FAQ SECTION (REDESIGNED) ================== */
+        #faq-section {
+            padding: 3rem 0;
+            background-color: #ffffff; /* Light Gray BG */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-bg-shapes .shape {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(243, 105, 39, 0.07);
+            z-index: 0;
+            animation: faq-float 20s infinite linear;
+        }
+        .shape-f-1 { width: 180px; height: 180px; top: 15%; right: 5%; animation-duration: 26s; }
+        .shape-f-2 { width: 120px; height: 120px; bottom: 10%; left: 70%; animation-duration: 18s; }
+
+        @keyframes faq-float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .faq-wrapper {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Left intro, Right accordion */
+            gap: 4rem;
+            align-items: start; /* Align to top */
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-intro-column .subtitle {
+            color: #F36927;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .faq-intro-column .title {
+            font-size: 2.5rem;
+            color: #333333;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        .faq-intro-column .description {
+            color: #555555;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-intro-image {
+     
+            overflow: hidden;
+           
+        }
+        .faq-intro-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .faq-item.active {
+            border-color: #F36927;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-header h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333333;
+            padding-right: 1rem;
+        }
+        
+        .faq-item.active .faq-header h3 {
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            font-size: 1rem;
+            color: #F36927;
+            transition: transform 0.4s ease;
+            background-color: #fef1e9;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(135deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        
+        .faq-content p {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #555555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1.5rem;
+        }
+
+        /* ================== RESPONSIVE DESIGN ================== */
+        @media screen and (max-width: 992px) {
+            .faq-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .faq-intro-column {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .faq-intro-column .title {
+                font-size: 2rem;
+            }
+        }
